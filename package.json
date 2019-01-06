@@ -2,13 +2,15 @@
   "name": "programmers-math",
   "version": "0.0.1",
   "description": "書籍「プログラマの数学」を読み進めるためのレポジトリです。",
-  "main": "index.js",
+  "directories": {
+    "test": "spec/"
+  },
   "scripts": {
-    "lint": "tslint 'src/**/*.ts' 'test/**/*.ts'",
+    "lint": "tslint 'src/**/*.ts' 'spec/**/*.ts'",
     "build": "tsc --lib es2015 --sourceMap --outDir dist",
-    "test:mocha": "mocha --require espower-typescript/guess test/**/*.ts",
-    "test:watch": "mocha --watch-extensions ts -w --require espower-typescript/guess test/**/*.ts",
-    "test": "npm run lint && npm run test:mocha",
+    "spec:mocha": "mocha --require espower-typescript/guess spec/**/*.ts",
+    "spec:watch": "mocha --watch-extensions ts -w --require espower-typescript/guess spec/**/*.ts",
+    "spec": "npm run lint && npm run spec:mocha",
     "clean": "rm -fr dist && mkdir dist"
   },
   "repository": {
