@@ -1,0 +1,33 @@
+{
+  "name": "programmers-math",
+  "version": "0.0.1",
+  "description": "書籍「プログラマの数学」を読み進めるためのレポジトリです。",
+  "main": "index.js",
+  "scripts": {
+    "lint": "tslint 'src/**/*.ts' 'test/**/*.ts'",
+    "build": "tsc --lib es2015 --sourceMap --outDir dist",
+    "test:mocha": "mocha --require espower-typescript/guess test/**/*.ts",
+    "test:watch": "mocha --watch-extensions ts -w --require espower-typescript/guess test/**/*.ts",
+    "test": "npm run lint && npm run test:mocha",
+    "clean": "rm -fr dist && mkdir dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msfukui/programmers-math.git"
+  },
+  "author": "msfukui",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/msfukui/programmers-math/issues"
+  },
+  "homepage": "https://github.com/msfukui/programmers-math#readme",
+  "devDependencies": {
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.12.18",
+    "espower-typescript": "^9.0.1",
+    "mocha": "^5.2.0",
+    "power-assert": "^1.6.1",
+    "tslint": "^5.12.0",
+    "typescript": "^3.2.2"
+  }
+}
