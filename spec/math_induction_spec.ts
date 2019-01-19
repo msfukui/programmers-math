@@ -38,3 +38,28 @@ describe("MathInduction#sum", () => {
     assert(MathInduction.sum([1, 2, 3], 2) === 3);
   });
 });
+
+describe("MathInduction#factorial", () => {
+  it("0! は 1 である", () => {
+    assert(MathInduction.factorial(0) === 1);
+  });
+
+  it("1! は 1 である", () => {
+    assert(MathInduction.factorial(1) === 1);
+  });
+
+  it("2! は 2 である", () => {
+    assert(MathInduction.factorial(2) === 2);
+  });
+
+  it("3! は 6 である", () => {
+    assert(MathInduction.factorial(3) === 6);
+  });
+
+  it("52! は 80658175170943878571660636856403766975289505440883277824000000000000 である", () => {
+    assert(
+      MathInduction.factorial(52) ===
+        80658175170943878571660636856403766975289505440883277824000000000000
+    );
+  });
+});

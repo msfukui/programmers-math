@@ -3,8 +3,9 @@ export class MathInduction {
     let r: string = `いまから、P(${n})が成り立つことを証明します。\n`;
     let k: number = 0;
     r += `ステップ1により、P(${k})が成り立ちます。\n`;
-    while(k < n) {
-      r += `ステップ2により、「P(${k})が成り立つならばP(${k + 1})も成り立つ」といえます。\n`;
+    while (k < n) {
+      r += `ステップ2により、「P(${k})が成り立つならばP(${k +
+        1})も成り立つ」といえます。\n`;
       r += `したがって、「P(${k + 1})が成り立つ」といえます。\n`;
       k += 1;
     }
@@ -20,6 +21,13 @@ export class MathInduction {
       k += 1;
     }
     return s;
+  }
+
+  public static factorial(n: number): number {
+    if (n === 0) {
+      return 1;
+    }
+    return n * this.factorial(n - 1);
   }
 }
 export default MathInduction;
