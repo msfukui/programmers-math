@@ -63,3 +63,29 @@ describe("MathInduction#factorial", () => {
     );
   });
 });
+
+describe("MathInduction#permutation", () => {
+  it("5P5 は 120 である", () => {
+    assert(MathInduction.permutation(5, 5) === 120);
+  });
+
+  it("5P4 は 120 である", () => {
+    assert(MathInduction.permutation(5, 4) === 120);
+  });
+
+  it("5P3 は 60 である", () => {
+    assert(MathInduction.permutation(5, 3) === 60);
+  });
+
+  it("5P2 は 20 である", () => {
+    assert(MathInduction.permutation(5, 2) === 20);
+  });
+
+  it("5P1 は 5 である", () => {
+    assert(MathInduction.permutation(5, 1) === 5);
+  });
+
+  it("5P0 は 1 である", () => {
+    assert(MathInduction.permutation(5, 0) === 1);
+  });
+});

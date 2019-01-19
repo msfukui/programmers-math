@@ -29,5 +29,13 @@ export class MathInduction {
     }
     return n * this.factorial(n - 1);
   }
+
+  public static permutation(n: number, k: number): number {
+    //if (k === 0) {
+    //  return 1;
+    //}
+    //return n * this.permutation(n - 1, k - 1);
+    return this.factorial(n) / this.factorial(n - k);
+  }
 }
 export default MathInduction;
