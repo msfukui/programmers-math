@@ -1,13 +1,14 @@
 import assert = require("assert");
 import MathInduction from "../src/math_induction";
 
-describe("MathInduction#prove", () => {
+describe("MathInduction#prove, #prove_another", () => {
   it("P(0) の証明結果を出力できる", () => {
     const s: string =
       "いまから、P(0)が成り立つことを証明します。\n" +
       "ステップ1により、P(0)が成り立ちます。\n" +
       "以上で、証明が終わりました。\n";
     assert(MathInduction.prove(0) === s);
+    assert(MathInduction.prove_another(0) === s);
   });
 
   it("P(1) の証明結果を出力できる", () => {
@@ -18,6 +19,7 @@ describe("MathInduction#prove", () => {
       "したがって、「P(1)が成り立つ」といえます。\n" +
       "以上で、証明が終わりました。\n";
     assert(MathInduction.prove(1) === s);
+    assert(MathInduction.prove_another(1) === s);
   });
 
   it("P(2) の証明結果を出力できる", () => {
@@ -30,6 +32,7 @@ describe("MathInduction#prove", () => {
       "したがって、「P(2)が成り立つ」といえます。\n" +
       "以上で、証明が終わりました。\n";
     assert(MathInduction.prove(2) === s);
+    assert(MathInduction.prove_another(2) === s);
   });
 });
 
@@ -64,29 +67,35 @@ describe("MathInduction#factorial", () => {
   });
 });
 
-describe("MathInduction#permutation", () => {
+describe("MathInduction#permutation, #permutation_another", () => {
   it("5P5 は 120 である", () => {
     assert(MathInduction.permutation(5, 5) === 120);
+    assert(MathInduction.permutation_another(5, 5) === 120);
   });
 
   it("5P4 は 120 である", () => {
     assert(MathInduction.permutation(5, 4) === 120);
+    assert(MathInduction.permutation_another(5, 4) === 120);
   });
 
   it("5P3 は 60 である", () => {
     assert(MathInduction.permutation(5, 3) === 60);
+    assert(MathInduction.permutation_another(5, 3) === 60);
   });
 
   it("5P2 は 20 である", () => {
     assert(MathInduction.permutation(5, 2) === 20);
+    assert(MathInduction.permutation_another(5, 2) === 20);
   });
 
   it("5P1 は 5 である", () => {
     assert(MathInduction.permutation(5, 1) === 5);
+    assert(MathInduction.permutation_another(5, 1) === 5);
   });
 
   it("5P0 は 1 である", () => {
     assert(MathInduction.permutation(5, 0) === 1);
+    assert(MathInduction.permutation_another(5, 0) === 1);
   });
 });
 
@@ -113,5 +122,21 @@ describe("MathInduction#permutation", () => {
 
   it("5C0 は 1 である", () => {
     assert(MathInduction.combination(5, 0) === 1);
+  });
+});
+
+describe("MathInduction#hanoi", () => {
+  it("3ハノイの手順が a->c, a->b, b->c, a->b, c->a, c->b, a->b である", () => {
+    assert(
+      MathInduction.hanoi(3, "a", "b", "c") ===
+        "a->b, a->c, b->c, a->b, c->a, c->b, a->b, "
+    );
+  });
+
+  it("6ハノイの手順が a->c, a->b, c->b, a->c, b->a, b->c, a->c, a->b, c->b, c->a, b->a, c->b, a->c, a->b, c->b, a->c, b->a, b->c, a->c, b->a, c->b, c->a, b->a, b->c, a->c, a->b, c->b, a->c, b->a, b->c, a->c, a->b, c->b, c->a, b->a, c->b, a->c, a->b, c->b, c->a, b->a, b->c, a->c, b->a, c->b, c->a, b->a, c->b, a->c, a->b, c->b, a->c, b->a, b->c, a->c, a->b, c->b, c->a, b->a, c->b, a->c, a->b, c->b, である", () => {
+    assert(
+      MathInduction.hanoi(6, "a", "b", "c") ===
+        "a->c, a->b, c->b, a->c, b->a, b->c, a->c, a->b, c->b, c->a, b->a, c->b, a->c, a->b, c->b, a->c, b->a, b->c, a->c, b->a, c->b, c->a, b->a, b->c, a->c, a->b, c->b, a->c, b->a, b->c, a->c, a->b, c->b, c->a, b->a, c->b, a->c, a->b, c->b, c->a, b->a, b->c, a->c, b->a, c->b, c->a, b->a, c->b, a->c, a->b, c->b, a->c, b->a, b->c, a->c, a->b, c->b, c->a, b->a, c->b, a->c, a->b, c->b, "
+    );
   });
 });
