@@ -89,3 +89,29 @@ describe("MathInduction#permutation", () => {
     assert(MathInduction.permutation(5, 0) === 1);
   });
 });
+
+describe("MathInduction#permutation", () => {
+  it("5C5 は 1 である", () => {
+    assert(MathInduction.combination(5, 5) === 1);
+  });
+
+  it("5C4 は 5 である", () => {
+    assert(MathInduction.combination(5, 4) === 5);
+  });
+
+  it("5C3 は 10 である", () => {
+    assert(MathInduction.combination(5, 3) === 10);
+  });
+
+  it("5C2 は 10 である", () => {
+    assert(MathInduction.combination(5, 2) === 10);
+  });
+
+  it("5C1 は 5 である", () => {
+    assert(MathInduction.combination(5, 1) === 5);
+  });
+
+  it("5C0 は 1 である", () => {
+    assert(MathInduction.combination(5, 0) === 1);
+  });
+});

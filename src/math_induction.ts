@@ -37,5 +37,9 @@ export class MathInduction {
     //return n * this.permutation(n - 1, k - 1);
     return this.factorial(n) / this.factorial(n - k);
   }
+
+  public static combination(n: number, k: number): number {
+    return this.permutation(n, k) / this.permutation(k, k);
+  }
 }
 export default MathInduction;
