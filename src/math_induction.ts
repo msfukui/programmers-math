@@ -65,6 +65,16 @@ export class MathInduction {
     return this.permutation(n, k) / this.permutation(k, k);
   }
 
+  public static combination_another(n: number, k: number): number {
+    if (n === 0 || k === 0 || n === k) {
+      return 1;
+    }
+    return (
+      this.combination_another(n - 1, k - 1) +
+      this.combination_another(n - 1, k)
+    );
+  }
+
   public static hanoi(
     n: number,
     start: string,
